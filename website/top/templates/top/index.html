@@ -1,0 +1,11 @@
+{% if latest_topimage_list %}
+    <ul>
+    {% for topimage in latest_topimage_list %}
+        <li><a>{{ topimage.name }}</a></li>
+        <img src="{{ topimage.image.url }}" alt="Image">
+        <img src="{{ topimage.init_image.url }}" alt="Image">
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No top is available.</p>
+{% endif %}
