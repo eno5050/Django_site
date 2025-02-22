@@ -1,0 +1,4 @@
+website/top/__pycache__/*
+website/top/migrations/__pycache__/*
+website/website/__pycache__/*
+website/media/images/*
