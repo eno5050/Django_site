@@ -1,11 +1,69 @@
-{% if latest_topimage_list %}
+{% comment %} {% if latest_topimage_list %}
     <ul>
     {% for topimage in latest_topimage_list %}
-        <li><a>{{ topimage.name }}</a></li>
         <img src="{{ topimage.image.url }}" alt="Image">
         <img src="{{ topimage.init_image.url }}" alt="Image">
         {% endfor %}
     </ul>
 {% else %}
     <p>No top is available.</p>
-{% endif %}
+{% endif %} {% endcomment %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホームページ</title>
+    <link rel="stylesheet" href="{% static 'top/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>My Gaming Company</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">製品情報</a></li>
+                <li><a href="#">最新ニュース</a></li>
+                <li><a href="#">サポート</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="{% static 'img/hero_image.jpg' %}" alt="ヒーローイメージ">
+            <div class="hero-text">
+                <h2>楽しいゲームの新しい世界へ！</h2>
+                <p>最新のゲームをチェックしてください。</p>
+                <a href="#" class="cta-button">詳しくはこちら</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <img src="{% static 'img/feature1.jpg' %}" alt="機能1">
+                <h3>新しい体験</h3>
+                <p>最高のエンターテイメントをお届け。</p>
+            </div>
+            <div class="feature-item">
+                <img src="{% static 'img/feature2.jpg' %}" alt="機能2">
+                <h3>ワクワクするゲーム</h3>
+                <p>新機能とデザインであなたを冒険へと誘います。</p>
+            </div>
+            <div class="feature-item">
+                <img src="{% static 'img/feature3.jpg' %}" alt="機能3">
+                <h3>充実のサポート</h3>
+                <p>あなたを全力でサポートします。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Gaming Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
